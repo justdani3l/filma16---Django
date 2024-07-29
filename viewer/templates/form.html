@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <table>{{ form }}</table>
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <a class="btn btn-success" href="{% url 'sign_up' %}">Sign up</a>
+</form>
+{% endblock %}

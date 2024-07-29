@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Create Filma16!</h1>
+{% endblock %}
+
+{% block content1 %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                {{ form.title.errors }}
+                <label for="{{ form.title.id_for_label }}">Title:</label>
+                {{ form.title }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.trailer.errors }}
+                <label for="{{ form.trailer.id_for_label }}">Trailer:</label>
+                {{ form.trailer }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.cover.errors }}
+                <label for="{{ form.cover.id_for_label }}">Trailer:</label>
+                {{ form.cover }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                {{ form.genre.errors }}
+                <label for="{{ form.genre.id_for_label }}">Genre:</label>
+                {{ form.genre }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.rating.errors }}
+                <label for="{{ form.rating.id_for_label }}">Rating:</label>
+                {{ form.rating }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.released.errors }}
+                <label for="{{ form.released.id_for_label }}">Released:</label>
+                {{ form.released }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form.description.errors }}
+        <label for="{{ form.description.id_for_label }}">Description:</label>
+        {{ form.description }}
+    </div>
+    <input type="submit" value="Ok" class="btn btn-primary">
+    <a href="{% url 'list' %}" class="btn btn-light">Cancel</a>
+</form>
+{% endblock %}

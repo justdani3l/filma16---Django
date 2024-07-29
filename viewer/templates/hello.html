@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SDA Python Tirana 16</title>
+</head>
+<body>
+<h1>Welcome to Filma16!</h1>
+{% for adjective in adjectives %}
+{% if adjective != 'cruel' %}
+<p>This is a {{ adjective }} world...</p>
+{% endif %}
+{% endfor %}
+</body>
+</html>

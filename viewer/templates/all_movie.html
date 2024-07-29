@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to Filma16!</h1>
+{% endblock %}
+
+{% block content1 %}
+<ul>
+    {% for movie in movies %}
+    <li>
+        {{ movie.title }} ({{ movie.released.year }}) - {{ movie.genre.name }} | {{movie.description}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
